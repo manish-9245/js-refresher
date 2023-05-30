@@ -1,3 +1,23 @@
+const DownloadButtonRenderer = ({ value }) => (
+  <button
+    className="download-button"
+    onClick={() => {
+      const element = document.createElement('a');
+      const file = new Blob([value], { type: 'text/plain' });
+      element.href = URL.createObjectURL(file);
+      element.download = 'text.txt';
+      element.click();
+    }}
+  >
+    <FontAwesomeIcon icon={faDownload} />
+  </button>
+);
+
+
+
+
+
+
 //ES5
 
 function increment(x, y){
